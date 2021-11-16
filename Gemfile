@@ -7,6 +7,8 @@ gem 'bulma-rails', '~> 0.9.2'
 
 gem 'devise'
 
+gem 'cancancan'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'rails-controller-testing'
