@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,IAAI;CACb;;AAED,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "foods.scss"
+    ],
+    "names": [],
+    "file": "foods.css"
+}
