@@ -1,5 +1,7 @@
 class FoodsController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
+  # before_action :logged_in_user, only: [:create, :destroy]
+  before_action :set_food, only: %i[show destroy]
 
   def index
     @foods = Food.all
@@ -14,21 +16,27 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @new_food = current_user.foods.new food_params
+    @food = current_user.foods.new food_params
 
-    if @new_food.save
-      redirect_to foods_path, notice: 'Food successfully created!'
+    if @food.save
+      flash[:success] = 'Food successfully created!'
+      redirect_to foods_url
     else
       render :new
     end
   end
 
   def destroy
-    food.destroy
-    redirect_to foods_path, notice: 'Food deleted!'
+    @food.destroy
+    flash[:success] = 'Post deleted'
+    redirect_to foods_url
   end
 
   private
+
+  def set_food
+    @food = Food.find(params[:id])
+  end
 
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price)
