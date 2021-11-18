@@ -1,24 +1,69 @@
-# README
+# Recipe App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> 
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
 
-* System dependencies
+- Ruby
+- Rails
+- HTML
+- Rspec
 
-* Configuration
 
-* Database creation
+## Getting Started
 
-* Database initialization
+To get a local copy up and running follow these simple example steps on the command line.
 
-* How to run the test suite
+```bash
 
-* Services (job queues, cache servers, search engines, etc.)
+  # Clone the project from it's github repo.
 
-* Deployment instructions
+  $ git clone https://github.com/Ghiftee/recipe-app.git
 
-* ...
+  # Change directory to the root of project
+
+  $ cd recipe-app/
+
+  # Run bundle
+
+  $ bundle
+
+  # Create the database
+
+  $ rails db:create
+
+
+```
+
+## Authors
+
+👤 **Denis Andrei Diaconu**
+
+- GitHub: [@DenisDiaconu](https://github.com/denisdiaconu)
+- Twitter: [@DenisAndreiDia1](https://twitter.com/DenisAndreiDia1)
+- LinkedIn: [Denis Diaconu](https://www.linkedin.com/in/denis-diaconu-1394091b7/)
+
+👤 **Gift Uwhubetine**
+
+- GitHub: [@Ghiftee](https://github.com/ghiftee)
+- Twitter: [@Ghiftee](https://twitter.com/i_ghiftee)
+- LinkedIn: [Ghiftee](https://linkedin.com/in/giftuwhubetine)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse Community
+- Everyone whose code was used in this project
+
+## 📝 License
+
+This project is [MIT licensed](./LICENSE)
