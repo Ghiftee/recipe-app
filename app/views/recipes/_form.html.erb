@@ -1,0 +1,39 @@
+<%= form_with(model: recipe) do |form| %>
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, class: "input" %>
+    </div>
+  </div>
+  
+  <div >
+    <div class="field">
+      <%= form.label :preparation_time, class: "label" %>
+      <div class="control">
+        <%= form.text_field :preparation_time, type: "time", class: "input" %>
+      </div>
+    </div>
+    <div class="field">
+      <%= form.label :cooking_time, class: "label" %>
+      <div class="control">
+        <%= form.text_field :cooking_time, type: "time", class: "input" %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="field">
+    <%= form.label :description, class: "label" %>
+    <div class="control">
+      <%= form.text_area :description, class: "textarea" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :public %>
+    <%= form.label :public, class: "checkbox" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-success is-focused mb-2" %>
+  </div>
+<% end %>
