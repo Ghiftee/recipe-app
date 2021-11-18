@@ -32,5 +32,26 @@
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
-
-<%= %>
+<%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe) %>
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe.recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.food.measurement_unit %></td>
+        <td><%= recipe_food.food.price * recipe_food.quantity %></td>
+        <td><%= link_to 'Edit', edit_recipe_food_path(recipe_food) %></td>
+        <td><%= button_to 'Destroy', recipe_food_path(recipe_food), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

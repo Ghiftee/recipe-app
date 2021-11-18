@@ -1,7 +1,15 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resources :foods
-  devise_for :users
   root to: 'recipes#index'
-  resources :recipes
+
+  devise_for :users
+  resources :foods
+
+  resources :recipes do
+    resources :recipe_foods, only: %i[new]
+  end
+
+  resources :recipe_foods, only: %i[edit update destroy create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
