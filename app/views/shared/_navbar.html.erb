@@ -15,7 +15,6 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <span class="mr-3 has-text-success-dark">Logged in as: <strong><%= current_user.email %></strong></span>
         <div class="buttons"> 
           <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-outlined" %>
         </div>
