@@ -1,0 +1,22 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <% if user_signed_in? %>
+        <%= link_to "Food", foods_path, class: "navbar-item #{current_page?(foods_path) ? "is-active" : ""}" %>
+        <%= link_to "My Recipes", recipes_path, class: "navbar-item #{current_page?(recipes_path) ? "is-active" : ""}" %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <span>Logged in as <strong><%= current_user.email %></strong></span>
+        <div class="buttons"> 
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-light" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
