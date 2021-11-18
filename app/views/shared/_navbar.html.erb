@@ -2,8 +2,11 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <% if user_signed_in? %>
-        <%= link_to "Food", foods_path, class: "navbar-item #{current_page?(foods_path) ? "is-active" : ""}" %>
-        <%= link_to "My Recipes", recipes_path, class: "navbar-item #{current_page?(recipes_path) ? "is-active" : ""}" %>
+        <%= link_to "Food", foods_path, class: "navbar-item has-text-link" %>
+        <%= link_to "Recipes", recipes_path, class: "navbar-item has-text-link" %>
+        <%# Replace with paths with correct paths %>
+        <%= link_to "Public recipes", foods_path, class: "navbar-item has-text-link" %>
+        <%= link_to "Shopping list", recipes_path, class: "navbar-item has-text-link" %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path %> |
         <%= link_to "Login", new_user_session_path %>
@@ -12,11 +15,12 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <span>Logged in as <strong><%= current_user.email %></strong></span>
+        <span class="mr-3 has-text-success-dark">Logged in as: <strong><%= current_user.email %></strong></span>
         <div class="buttons"> 
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-light" %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-outlined" %>
         </div>
       </div>
     </div>
   </div>
 </nav>
+<hr>
