@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'general_shopping_list/index'
   root to: 'foods#index'
 
   devise_for :users
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'shopping_list', to: 'users#show'
   get 'public_recipes', to: 'recipes#public_recipes'
+  get 'general_shopping_list', to: 'general_shopping_lists#index', as: 'general_shopping_list'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
