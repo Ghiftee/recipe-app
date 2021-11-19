@@ -4,8 +4,7 @@
       <% if user_signed_in? %>
         <%= link_to "Food", foods_path, class: "navbar-item has-text-link" %>
         <%= link_to "Recipes", recipes_path, class: "navbar-item has-text-link" %>
-        <%# Replace paths below with correct paths when they have been created %>
-        <%= link_to "Public recipes", foods_path, class: "navbar-item has-text-link" %>
+        <%= link_to "Public recipes", recipes_path, class: "navbar-item has-text-link" %>
         <%= link_to "Shopping list", recipes_path, class: "navbar-item has-text-link" %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path %> |
@@ -15,7 +14,8 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons"> 
+        <span class="mr-3 has-text-success-dark">Logged in as: <strong><%= current_user.email %></strong></span>
+        <div class="buttons">
           <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-outlined" %>
         </div>
       </div>
