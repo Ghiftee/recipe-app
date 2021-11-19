@@ -1,10 +1,14 @@
 class RecipesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: :public_recipes
   before_action :set_recipe, only: %i[show edit update destroy]
 
   # GET /recipes or /recipes.json
   def index
     @recipes = Recipe.all
+  end
+
+  def public_recipes
+    @recipes = Recipe.where({ public: true })
   end
 
   # GET /recipes/1 or /recipes/1.json

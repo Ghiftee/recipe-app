@@ -33,6 +33,7 @@
     <%= link_to 'Back', recipes_path, class: 'button is-link is-small mt-3' %>
   </div>
   <div >
+    <%= link_to 'Generate shopping list', shopping_list_path(@recipe), class: 'button is-link' %>
     <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: 'button is-link' %>
   </div>
 </div>
