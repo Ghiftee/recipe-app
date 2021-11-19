@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'recipes#index'
+  root to: 'foods#index'
 
   devise_for :users
   resources :foods
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :recipe_foods, only: %i[edit update destroy create]
+
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
