@@ -65,7 +65,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse Community
-- Everyone whose code was used in this project
 
 ## 📝 License
 
