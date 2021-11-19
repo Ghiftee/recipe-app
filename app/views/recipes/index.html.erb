@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Recipes</h1>
+<h1 class='has-text-centered m-3 is-size-3 has-text-weight-bold'>Recipes</h1>
 
-<table>
+<div class="table-container">
+<table class="table is-fullwidth is-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,21 +18,20 @@
 
   <tbody>
     <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.preparation_time %></td>
-        <td><%= recipe.cooking_time %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.public %></td>
-        <td><%= recipe.user_id %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tr>
+          <td><%= recipe.name %></td>
+          <td><%= recipe.preparation_time %></td>
+          <td><%= recipe.cooking_time %></td>
+          <td><%= recipe.description %></td>
+          <td><%= recipe.public %></td>
+          <td><%= recipe.user_id %></td>
+          <td><%= link_to 'Show', recipe, class: 'button is-link is-small'%></td>
+          <td><%= link_to 'Edit', edit_recipe_path(recipe), class: 'button is-warning is-small' %></td>
+          <td><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class: 'button is-danger is-small' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= link_to 'New Recipe', new_recipe_path, class: "button is-black is-focused is-pulled-right m-5" %>
